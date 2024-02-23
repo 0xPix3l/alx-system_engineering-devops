@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Print on the 9th line Hi.
+
+COUNTER=0
+while [ $COUNTER -lt 11 ]
+do
+	if [ $COUNTER = 9 ]
+	then
+		echo "Hi"
+	else
+		echo "Best School"
+	fi
+	(( COUNTER++ ))
+done
+
