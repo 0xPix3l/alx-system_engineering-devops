@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this for kill no matter what
+
+pkill -9 "bash ./7-highlander" -f
