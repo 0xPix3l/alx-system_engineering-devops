@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Magic
+
+# Handle the SIGTERM:
+trap "echo 'I am invincible!!!'" SIGTERM
+
+# the loop:
+while true;
+do
+	echo "To infinity and beyond indefinitely"
+	sleep 2
+done
