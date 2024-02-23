@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Creates somethings
+
+echo "$$" > /var/run/myscript.pid
+
+term(){
+	rm /var/run/myscript.pid
+	exit
+}
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo " Y U no love me?!"' SIGINT
+	trap 'echo "I hate the kill command" && term' SIGTERM
+	trap 'term' SIGQUIT
+done
