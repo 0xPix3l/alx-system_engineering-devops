@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# whose name contain the word bash
+
+pgrep -l bash
