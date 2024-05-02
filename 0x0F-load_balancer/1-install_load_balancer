@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# config the HAproxy as a load balancer
+
+# installing HAproxy
+sudo apt update -y
+sudo apt install haproxy -y
+
+#configure haproxy to handle both servers and distribute them
+echo '
+frontend deadpixel.tech
+        bind 0:80
+        default_backend web_servers
+
+backend web_servers
+        balance roundrobin
+        server 530946-web-01 54.157.175.162:80
+        server 530946-web-02 54.144.158.150:80
+' >> /etc/haproxy/haproxy.cfg
+
+# restarting nginx
+sudo systemctl restart haproxy
