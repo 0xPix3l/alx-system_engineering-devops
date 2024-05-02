@@ -2,8 +2,8 @@
 # config a new machine
 
 # installing nginx on web-01:
-apt update -y
-apt install -y nginx
+sudo apt update -y
+sudo apt install -y nginx
 
 HOST_NAME=$(hostname)
 HEADER="\\\n\tadd_header X-Served-By $HOST_NAME;\n"
