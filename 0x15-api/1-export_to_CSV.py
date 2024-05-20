@@ -20,7 +20,7 @@ if __name__ == "__main__":
     with open(file_name, 'w') as file:
         writer = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
 
-    for task in todos.json():
-        if task.get('userId') == int(userId):
-            writer.writerow([userId, name, task.get('completed'),
-                             task.get('title')])
+        for task in todos.json():
+            if task.get('userId') == int(userId):
+                writer.writerow([userId, name, str(task.get('completed')),
+                                 task.get('title')])
